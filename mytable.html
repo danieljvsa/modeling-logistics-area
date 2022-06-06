@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Modeling Logistics Area</title>
+    <script type="text/javascript" src="../node_modules/three/build/three.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>   
+    <script type="text/javascript" src="../node_modules/dat.gui/build/dat.gui.js"></script>
+    <script type="text/javascript" src="Webgl.js"></script>
+    <script type="text/javascript" src="GUI.js"></script>
+    <script type="text/javascript" src="../node_modules/three/examples/js/controls/TrackballControls.js"></script>
+    <script type="text/javascript" src="../node_modules/three/examples/js/controls/OrbitControls.js"></script>
+    <script type="text/javascript" src="../node_modules/three/examples/js/controls/FirstPersonControls.js"></script>
+    <script type="text/javascript" src="../node_modules/three/examples/js/controls/FlyControls.js"></script>
+
+    <style>
+        body {
+            /* set margin to 0 and overflow to hidden, to go fullscreen */
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<div id="GUI-output">
+</div>
+
+<!-- Div which will hold the Output -->
+<div id="WebGL-output">
+</div>
+
+<script type="text/javascript">
+
+$(function (){
+    let webgl = new Webgl();
+
+    let render = function (){
+        requestAnimationFrame(render);
+        webgl.render();
+    };    
+    render();
+});
+
+
+</script>
+</body>
+</html>
