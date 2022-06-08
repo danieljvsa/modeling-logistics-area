@@ -22,7 +22,7 @@ class Webgl {
     this.camera.position.x = 1000;
     this.camera.position.y = 1000;
     this.camera.position.z = 1000;
-    this.camera.lookAt(new THREE.Vector3(0,0,0));
+    this.camera.lookAt(this.scene.position);
     
     this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
     this.controls.autoRotate = false;
@@ -36,9 +36,13 @@ class Webgl {
     this.scene.add(map);
    
 
-    let box = createBox(350, 50, -545)
-    box.rotation.y = -0.5678;
-    this.scene.add(box)
+    let box1 = createBox(370, 15, -548)
+    box1.rotation.y = -0.5678;
+    this.scene.add(box1)
+
+    let box2 = createBox(510, 15, -455)
+    box2.rotation.y = -0.5678;
+    this.scene.add(box2)
     
     
     function createBox(x, y, z){
