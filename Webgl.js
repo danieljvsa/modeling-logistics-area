@@ -17,12 +17,12 @@ class Webgl {
     
     this.scene = new THREE.Scene();     
 
-    this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 3000);
+    this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 5000);
     // position and point the camera to the center of the scene
     this.camera.position.x = 1000;
     this.camera.position.y = 1000;
     this.camera.position.z = 1000;
-    this.camera.lookAt(this.scene.position);
+    this.camera.lookAt(new THREE.Vector3(0,0,0));
     
     this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
     this.controls.autoRotate = false;
@@ -36,17 +36,17 @@ class Webgl {
     this.scene.add(map);
    
 
-    let box1 = createBox(370, 15, -548)
+    let box1 = createBox(28.2, 28, 24, 370, 15, -548)
     box1.rotation.y = -0.5678;
     this.scene.add(box1)
 
-    let box2 = createBox(510, 15, -455)
+    let box2 = createBox(24.2, 28, 24, 510, 15, -455)
     box2.rotation.y = -0.5678;
     this.scene.add(box2)
     
     
-    function createBox(x, y, z){
-      var box = new Pallet();
+    function createBox(width, depth, height, x, y, z){
+      var box = new Pallet(width, depth, height);
 
       box.translateX(x);
       box.translateY(y);

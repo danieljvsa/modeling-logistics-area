@@ -4,7 +4,7 @@
 
 class Pallet extends THREE.Object3D {
 
-  constructor() {
+  constructor(width, depth, height) {
     super();
 
     // box size
@@ -12,7 +12,7 @@ class Pallet extends THREE.Object3D {
     var text = 'ALTERNATORS XPTO MY COMPANY INC';
 
     // box geometry
-    var boxGeometry = new THREE.BoxGeometry(size, size, size);
+    var boxGeometry = new THREE.BoxGeometry(width, height, depth, 16, 16, 16);
     boxGeometry.translate = new THREE.Vector3(size/2, size/2, -size/2)
   
     var boxSideTexture = new THREE.TextureLoader().load('../assets/textures/general/darker_wood.jpg');
