@@ -37,11 +37,11 @@ class Webgl {
     //map.add(new THREE.AxisHelper(400))
     this.scene.add(new THREE.AxisHelper(400))
 
-    let box1 = createBox(28.2, 28, 24, 17, 0, -662)
+    let box1 = createBox(28.2, 28, 24, 17, 10, -662)
     box1.rotation.y = 0; //radians to acompany the plane
     this.scene.add(box1)
 
-    let box2 = createBox(24.2, 28, 24, 185, 0, -659)
+    let box2 = createBox(24.2, 28, 24, 185, 10, -659)
     box2.rotation.y = 0;  //radians to acompany the plane
     this.scene.add(box2)
     
