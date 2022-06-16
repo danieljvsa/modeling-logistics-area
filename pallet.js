@@ -9,11 +9,11 @@ class Pallet extends THREE.Object3D {
 
     // box size
     var size = 28;
-    var text = 'ALTERNATORS XPTO MY COMPANY INC';
+    var text = 'ALTERNATORS XPTO\n MY COMPANY INC';
 
     // box geometry
     var boxGeometry = new THREE.BoxGeometry(width, height, depth, 16, 16, 16);
-    boxGeometry.translate = new THREE.Vector3(size/2, size/2, -size/2)
+    boxGeometry.translate = new THREE.Vector3(width/2, height/2, -depth/2)
   
     var boxSideTexture = new THREE.TextureLoader().load('../assets/textures/general/darker_wood.jpg');
     var boxTopTexture = new THREE.TextureLoader().load('../images/alternator.png');
@@ -36,11 +36,34 @@ class Pallet extends THREE.Object3D {
         var textGeometry = new THREE.TextGeometry(text, { font: font, size: 1, height: 0.1 });
         var textMaterial = new THREE.MeshPhongMaterial({ color: 'red' });
         var textMesh = new THREE.Mesh(textGeometry, textMaterial)
-        textMesh.translateY(size/3);
-        textMesh.translateX(size/2);
-        textMesh.translateZ(size/2);
+        var textMesh1 = new THREE.Mesh(textGeometry, textMaterial)
+        var textMesh2 = new THREE.Mesh(textGeometry, textMaterial)
+        var textMesh3 = new THREE.Mesh(textGeometry, textMaterial)
+        textMesh.translateY(width/3);
+        textMesh.translateX(width/2);
+        textMesh.translateZ(width/4);
         textMesh.rotateY(Math.PI/2)
+
+        textMesh1.translateY(width/3);
+        textMesh1.translateX(-width/2);
+        textMesh1.translateZ(-width/4);
+        textMesh1.rotateY(-Math.PI/2)
+        
+        textMesh2.translateY(depth/3);
+        textMesh2.translateX(depth/4);
+        textMesh2.translateZ(depth/2);
+        textMesh2.rotateY(Math.PI)
+        textMesh2.rotateX(-2*Math.PI)
+
+        textMesh3.translateY(depth/3);
+        textMesh3.translateX(depth/4);
+        textMesh3.translateZ(-depth/2);
+        textMesh3.rotateY(Math.PI)
+
         cubeMesh.add(textMesh);
+        cubeMesh.add(textMesh1);
+        cubeMesh.add(textMesh2);
+        cubeMesh.add(textMesh3);
       }
     );
     

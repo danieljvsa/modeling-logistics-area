@@ -22,7 +22,7 @@ class Webgl {
     this.camera.position.x = 1000;
     this.camera.position.y = 1000;
     this.camera.position.z = 1000;
-    this.camera.lookAt(new THREE.Vector3(0,0,0));
+    this.camera.lookAt(this.scene.position);
     
     this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
     this.controls.autoRotate = false;
@@ -32,16 +32,17 @@ class Webgl {
     this.scene.add(this.ambientLight);
 
     let map = new Area();
-    map.rotation.x = -1.5708;
+    map.rotation.y = 0.5678; //radians to make are rotate 0.5678 in same axis coordinate
     this.scene.add(map);
-   
+    //map.add(new THREE.AxisHelper(400))
+    this.scene.add(new THREE.AxisHelper(400))
 
-    let box1 = createBox(28.2, 28, 24, 370, 15, -548)
-    box1.rotation.y = -0.5678;
+    let box1 = createBox(28.2, 28, 24, 17, 0, -662)
+    box1.rotation.y = 0; //radians to acompany the plane
     this.scene.add(box1)
 
-    let box2 = createBox(24.2, 28, 24, 510, 15, -455)
-    box2.rotation.y = -0.5678;
+    let box2 = createBox(24.2, 28, 24, 185, 0, -659)
+    box2.rotation.y = 0;  //radians to acompany the plane
     this.scene.add(box2)
     
     
