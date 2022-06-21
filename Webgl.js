@@ -19,9 +19,9 @@ class Webgl {
 
     this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 5000);
     // position and point the camera to the center of the scene
-    this.camera.position.x = 1000;
+    this.camera.position.x = 1750;
     this.camera.position.y = 1000;
-    this.camera.position.z = 1000;
+    this.camera.position.z = 0;
     this.camera.lookAt(this.scene.position);
     
     this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
@@ -35,7 +35,7 @@ class Webgl {
     map.rotation.y = 0.5678; //radians to make are rotate 0.5678 in same axis coordinate
     this.scene.add(map);
     //map.add(new THREE.AxisHelper(400))
-    this.scene.add(new THREE.AxisHelper(400))
+    //this.scene.add(new THREE.AxisHelper(400))
 
     let box1 = createBox(28.2, 28, 24, 17, 10, -662)
     box1.rotation.y = 0; //radians to acompany the plane
