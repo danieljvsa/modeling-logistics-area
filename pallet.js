@@ -15,7 +15,7 @@ class Pallet extends THREE.Object3D {
     var boxGeometry = new THREE.BoxGeometry(width, height, depth, 16, 16, 16);
     boxGeometry.translate = new THREE.Vector3(width/2, height/2, -depth/2)
   
-    var boxSideTexture = new THREE.TextureLoader().load('../assets/textures/general/darker_wood.jpg');
+    var boxSideTexture = new THREE.TextureLoader().load('../images/darker_wood.jpg');
     var boxTopTexture = new THREE.TextureLoader().load('../images/alternator.png');
     boxTopTexture.wrapS = THREE.RepeatWrapping;
     boxTopTexture.wrapT = THREE.RepeatWrapping;
